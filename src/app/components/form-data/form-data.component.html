@@ -1,0 +1,78 @@
+<form class="wrapper-form">
+  header form
+  <div class="wrapper-inputs">
+    <mat-form-field style="width: 300px">
+      <mat-label>Full name</mat-label>
+      <input
+        required
+        matInput
+        placeholder="Full name"
+        [formControl]="fullName"
+      />
+      <mat-error *ngIf="fullName.invalid">{{
+        getErrorNameMessage()
+      }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field style="width: 300px">
+      <mat-label>Enter your email</mat-label>
+      <input
+        required
+        matInput
+        placeholder="name@example.com"
+        [formControl]="email"
+      />
+      <mat-error *ngIf="email.invalid">{{ getErrorEmailMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field style="width: 300px">
+      <mat-label>Enter your password</mat-label>
+      <input
+        [formControl]="password"
+        matInput
+        [type]="hidePassword ? 'password' : 'text'"
+      />
+      <button
+        required
+        mat-icon-button
+        matSuffix
+        (click)="hidePassword = !hidePassword"
+        [attr.aria-label]="'hide password'"
+        [attr.aria-pressed]="hidePassword"
+      >
+        <mat-icon>{{
+          hidePassword ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field style="width: 300px">
+      <mat-label>Confirm password</mat-label>
+      <input
+        [formControl]="confirmPassword"
+        matInput
+        [type]="hideConfirmPassword ? 'password' : 'text'"
+      />
+      <mat-error *ngIf="confirmPassword.invalid">{{ getErroConfirmPasswordMessage() }}</mat-error>
+
+      <button
+        required
+        mat-icon-button
+        matSuffix
+        (click)="hideConfirmPassword = !hideConfirmPassword"
+        [attr.aria-label]="'confirm password'"
+        [attr.aria-pressed]="hideConfirmPassword"
+      >
+        <mat-icon>{{
+          hideConfirmPassword ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button color="primary">Primary</button>
+  <p>full name test: {{ fullName.value }}</p>
+  <p>email teste: {{ email.value }}</p>
+  <p>pass test: {{ password.value }}</p>
+  <p>conf pass test: {{ confirmPassword.value }}</p>
+</form>
