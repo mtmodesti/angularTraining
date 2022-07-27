@@ -28,10 +28,15 @@
     <mat-form-field style="width: 300px">
       <mat-label>Enter your password</mat-label>
       <input
-        [formControl]="password"
+        required
         matInput
+        placeholder="Password"
+        [formControl]="password"
         [type]="hidePassword ? 'password' : 'text'"
       />
+      <mat-error *ngIf="password.invalid">{{
+        getErrorPasswordMessage()
+      }}</mat-error>
       <button
         required
         mat-icon-button
@@ -49,11 +54,15 @@
     <mat-form-field style="width: 300px">
       <mat-label>Confirm password</mat-label>
       <input
-        [formControl]="confirmPassword"
+        required
         matInput
+        placeholder="Confirma password"
+        [formControl]="confirmPassword"
         [type]="hideConfirmPassword ? 'password' : 'text'"
       />
-      <mat-error *ngIf="confirmPassword.invalid">{{ getErroConfirmPasswordMessage() }}</mat-error>
+      <mat-error *ngIf="confirmPassword.invalid">{{
+        getErroConfirmPasswordMessage()
+      }}</mat-error>
 
       <button
         required

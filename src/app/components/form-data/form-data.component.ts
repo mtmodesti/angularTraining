@@ -43,15 +43,18 @@ export class FormDataComponent implements OnInit {
   }
 
   getErrorPasswordMessage(){
-    if (this.password.hasError('')){
-      return 'Weak password'
+    if (this.password.hasError('required')){
+      return 'You must enter a value'
     }
     return this.password.hasError('password') ? 'weak' : ''
   }
 
   getErroConfirmPasswordMessage() {
   
-    return ''
+    if (this.password.hasError('required')){
+      return 'You must enter a value'
+    }
+    return this.password.hasError('password') ? 'weak' : ''
   }
 
   teste() {
