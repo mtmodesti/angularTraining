@@ -13,13 +13,21 @@ export class FormDataComponent implements OnInit {
     Validators.minLength(3),
   ]);
 
-
-  password = new FormControl('', [Validators.required,  Validators.pattern('^[a-zA-Z]*$'),]);
-
+  password = new FormControl('', [
+    Validators.required,
+    Validators.pattern(
+      '^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$'
+    ),
+  ]);
 
   email = new FormControl('', [Validators.required, Validators.email]);
 
-  confirmPassword = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]*$')]);
+  confirmPassword = new FormControl('', [
+    Validators.required,
+    Validators.pattern(
+      '^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{6,15}$'
+    ),
+  ]);
 
   hidePassword = true;
   hideConfirmPassword = true;
@@ -31,7 +39,7 @@ export class FormDataComponent implements OnInit {
       return 'You must enter a value';
     }
     //PERGUNTA - PQ ESSA MSG NÃO APARECE?
-    return this.fullName.hasError('fullName') ? '' : 'Not a valid input';
+    return this.fullName.hasError('fullName') ? '' : 'Only letters';
   }
 
   getErrorEmailMessage() {
@@ -39,22 +47,24 @@ export class FormDataComponent implements OnInit {
       return 'You must enter a value';
     }
 
-    return this.email.hasError('email') ? 'Not a valid input' : '';
+    return this.email.hasError('email') ? 'Invalid e-mail format' : '';
   }
 
-  getErrorPasswordMessage(){
-    if (this.password.hasError('required')){
-      return 'You must enter a value'
+  getErrorPasswordMessage() {
+    if (this.password.hasError('required')) {
+      return 'You must enter a value';
     }
-    return this.password.hasError('password') ? 'weak' : ''
+    return this.password.hasError('password') ? '' : 'Weak password';
   }
 
   getErroConfirmPasswordMessage() {
-  
-    if (this.password.hasError('required')){
-      return 'You must enter a value'
+    if (this.confirmPassword.hasError('required')) {
+      return 'You must enter a value';
     }
-    return this.password.hasError('password') ? 'weak' : ''
+    if (this.password != this.confirmPassword) {
+      return 'Must Match';
+    }
+    return '';
   }
 
   teste() {
