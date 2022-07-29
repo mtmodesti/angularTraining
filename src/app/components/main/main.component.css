@@ -1,0 +1,17 @@
+.wrapper {
+  width: 100%;
+  height: 95vh;
+  background-color: var(--primarycolor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--fiftycolor);
+}
+
+.content {
+  width: 80%;
+  height: 80%;
+  border-radius: 3%;
+  background: var(--secondaycolor);
+  box-shadow: inset 0 0 1em var(--fiftycolor), 0 0 1em var(--fourtercolor);
+}

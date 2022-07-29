@@ -3,7 +3,7 @@
 * {
   margin: 0px;
   padding: 0px;
-  color: white;
+  color: var(--fiftycolor);
 }
 
 ul {
@@ -16,10 +16,10 @@ body {
 
 .area {
   z-index: -1;
-  background: #4e54c8;
-  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+  background-color: var(--primarycolor);
   width: 100%;
-  height: 70px;
+  height: 5vh;
+  padding-top: 10px;
 }
 
 .circles {
@@ -29,6 +29,7 @@ body {
   width: 100%;
   height: 80px;
   overflow: hidden;
+  
 }
 
 .circles li {
@@ -37,7 +38,7 @@ body {
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--fourtercolor);
   animation: animate 15s linear infinite;
   border-radius: 100%;
 
@@ -121,46 +122,47 @@ body {
     transform: translateY(0) rotate(0deg);
     opacity: 0;
     margin-left: 0;
-    transform: scale(0.5);
+    transform: scale(0.8);
   }
 
   50% {
     transform: translateY(0) rotate(360deg);
     opacity: 1;
     margin-left: 200%;
-    transform: scale(2.5);
+    transform: scale(1);
 
   }
   100% {
     transform: translateY(0) rotate(360deg);
     opacity: 0;
     margin-left: 200%;
-    transform: scale(1);
+    transform: scale(0.8);
 
   }
 }
 
 .wrapper {
+  
   z-index: 1;
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
 }
 
 .personal-info {
   display: flex;
   flex-direction: column;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 2px var(--primarycolor);
   transition: 1s;
+
 }
 
 .menu {
   z-index: 1;
   display: flex;
   gap: 10px;
-  text-shadow: #ccc 1px 0 10px;
+  text-shadow: var(--primarycolor) 1px 0 10px;
   transition: 1s;
 }
 
@@ -169,9 +171,11 @@ body {
 }
 .menu > li:hover {
   transition: 0.4s;
-  text-shadow: 10px 10px 20px black;
-  color: black;
+  text-shadow: 10px 10px 20px var(--primarycolor);
+  color: var(--terciarycolor);
   cursor: pointer;
+  font-size: 23px;
+  border-top: 1px solid var(--fiftycolor);
 }
 
 @media screen and (max-width: 600px) {

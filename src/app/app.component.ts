@@ -8,9 +8,7 @@ import { Component,  } from '@angular/core';
 export class AppComponent {
   title = 'fullstackprojectng';
 
+  endpoint:string = ''
 
-  onChangeData(){
-console.log('event')
-  }
 
 }

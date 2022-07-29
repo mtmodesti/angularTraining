@@ -1,15 +1,15 @@
+import { MainComponent } from './components/main/main.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { FormDataComponent } from './components/form-data/form-data.component';
 
 const routes: Routes = [
- {path:'teste', component: FormDataComponent},
-  //{path:'training', }
+  { path: 'teste', component: FormDataComponent },
+  { path: '', component: MainComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
