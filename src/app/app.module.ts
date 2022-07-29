@@ -16,12 +16,13 @@ import {MatButtonModule} from '@angular/material/button'
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { HeaderComponent } from './components/header/header.component';
+import { EmitterComponent } from './components/emitter/emitter.component';
 
 //import {MatSelectInfiniteScrollModule} from 'ng-mat-select-infinite-scroll';
 /* fim material angular */
 
 @NgModule({
-  declarations: [AppComponent, ParentDataComponent, FormDataComponent, HeaderComponent],
+  declarations: [AppComponent, ParentDataComponent, FormDataComponent, HeaderComponent, EmitterComponent],
   imports: [
     BrowserModule,
     MatInputModule,

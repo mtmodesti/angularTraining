@@ -7,4 +7,10 @@ import { Component,  } from '@angular/core';
 })
 export class AppComponent {
   title = 'fullstackprojectng';
+
+
+  onChangeData(){
+console.log('event')
+  }
+
 }
