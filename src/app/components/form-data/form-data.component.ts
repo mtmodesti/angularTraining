@@ -7,6 +7,9 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./form-data.component.css'],
 })
 export class FormDataComponent implements OnInit {
+
+  items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+  expandedIndex = 0;
   fullName = new FormControl('', [
     Validators.required,
     Validators.pattern('^[a-zA-Z]*$'),
@@ -61,14 +64,18 @@ export class FormDataComponent implements OnInit {
     if (this.confirmPassword.hasError('required')) {
       return 'You must enter a value';
     }
-    if (this.password != this.confirmPassword) {
+    if (this.password.value != this.confirmPassword.value) {
+      console.log(this.password.value)
+      console.log(this.confirmPassword.value)
+
       return 'Must Match';
     }
     return '';
   }
 
   teste() {
-    console.log(this.email);
+    console.log('enjviar form')
+    return '';
   }
 
   ngOnInit(): void {}

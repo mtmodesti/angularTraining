@@ -1,15 +1,3 @@
-<!-- [title] é como chamaremos no componente filho
-    e "title" é como chamamos daqui deste componente pai
--->
-<body>
-  <div class="bg-secondary text-center wrapper-component">
-    <span class="text-light">
-      Passando a informação "title" para o componente filho</span
-    >
-    <app-parent-data [title]="title"></app-parent-data>
+<app-header></app-header>
 
-  </div>
-  <div class="wrapper-component bg-secondary text-center">
-    <app-form-data></app-form-data>
-  </div>
-</body>
+<router-outlet></router-outlet>
