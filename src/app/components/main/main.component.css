@@ -14,4 +14,34 @@
   border-radius: 3%;
   background: var(--secondaycolor);
   box-shadow: inset 0 0 1em var(--fiftycolor), 0 0 1em var(--fourtercolor);
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+
+.wrapper-tooltip{
+  display: flex;
+  width: 200px;
+  height: 320px;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--fiftycolor);
+  border-radius: 5px;
+  box-shadow: 2px -1px var(--fourtercolor);
+}
+
+.example-button {
+  margin-top: 16px;
+}
+
+.example-tooltip-style {
+  background: green;
+  width: 300px;
+  border-radius: 20px;
+  text-align: center;
 }

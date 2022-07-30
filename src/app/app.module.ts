@@ -8,6 +8,7 @@ import { FormDataComponent } from './components/form-data/form-data.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /* material angular imports */
+import {MatTooltipModule} from '@angular/material/tooltip'
 import {CdkAccordionModule} from '@angular/cdk/accordion'
 import { ReactiveFormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
@@ -27,6 +28,7 @@ import { MainComponent } from './components/main/main.component';
     MatInputModule,
     CdkAccordionModule,
     MatButtonModule,
+    MatTooltipModule,
     ReactiveFormsModule,
     MatIconModule,
     FormsModule,
