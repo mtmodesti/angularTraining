@@ -1,3 +1,4 @@
+import { HeroService } from './../hero.service';
 import { Component, OnInit } from '@angular/core';
 import { IHero } from '../hero';
 import { HEROES } from '../mock-heroes';
@@ -13,14 +14,23 @@ export class HeroesComponent implements OnInit {
     name: 'Windstorm',
   };
 
-  heroes = HEROES;
+  heroes: IHero[] = [];
 
   selectedHero?: IHero;
 
-  constructor() {}
-  ngOnInit(): void {}
+  constructor(private heroservice: HeroService) {
 
-  onSelect(hero: IHero) {
+
+  }
+  ngOnInit(): void {
+    this.getHeroes()
+  }
+
+  onSelect( hero: IHero) {
     this.selectedHero = hero;
+  }
+
+  getHeroes():void {
+    this.heroes = this.heroservice.getHeroes()
   }
 }

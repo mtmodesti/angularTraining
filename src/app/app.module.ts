@@ -18,12 +18,13 @@ import { MatInputModule } from '@angular/material/input';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 //import {MatSelectInfiniteScrollModule} from 'ng-mat-select-infinite-scroll';
 /* fim material angular */
 
 @NgModule({
-  declarations: [AppComponent, FormDataComponent, HeaderComponent, MainComponent, HeroesComponent],
+  declarations: [AppComponent, FormDataComponent, HeaderComponent, MainComponent, HeroesComponent, HeroDetailComponent],
   imports: [
     BrowserModule,
     MatInputModule,
